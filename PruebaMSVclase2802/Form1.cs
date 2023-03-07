@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PruebaMSVclase2802.Algoritmo.metodosalgoritmos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,10 +25,21 @@ namespace PruebaMSVclase2802
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Metodoinicial algoritmo = new Metodoinicial();
+            textBox2.Text = algoritmo.algoritmoMain().ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
