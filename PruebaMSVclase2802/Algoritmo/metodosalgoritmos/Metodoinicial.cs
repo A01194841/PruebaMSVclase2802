@@ -9,6 +9,7 @@ namespace PruebaMSVclase2802.Algoritmo.metodosalgoritmos
 {
     public class Metodoinicial
     {
+        public List<Demanda> lista = new List<Demanda> ();
         public Metodoinicial() 
         {
         }
@@ -36,7 +37,7 @@ namespace PruebaMSVclase2802.Algoritmo.metodosalgoritmos
         public double algoritmoMain() 
         {
             double media = 0;
-            List<Demanda> lista = LlenarDatosListaDemanda();
+            lista = LlenarDatosListaDemanda();
             media = AlgoritmoMedia(lista);
             return media;
         }

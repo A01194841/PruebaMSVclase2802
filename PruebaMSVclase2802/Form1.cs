@@ -1,4 +1,5 @@
-﻿using PruebaMSVclase2802.Algoritmo.metodosalgoritmos;
+﻿using PruebaMSVclase2802.Algoritmo.Clase;
+using PruebaMSVclase2802.Algoritmo.metodosalgoritmos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,8 +26,10 @@ namespace PruebaMSVclase2802
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int numeroDatos = Int32.Parse(textBox1.Text);
             Metodoinicial algoritmo = new Metodoinicial();
             textBox2.Text = algoritmo.algoritmoMain().ToString();
+            llenarGrid(numeroDatos, algoritmo.lista);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,5 +46,27 @@ namespace PruebaMSVclase2802
         {
 
         }
+
+        public void llenarGrid(int numeroDatos,List<Demanda> listaInicial) 
+        {
+            string numeroColumn1 = "1";
+            string numeroColumn2 = "2";
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add(numeroColumn1, "ID");
+            dataGridView1.Columns.Add(numeroColumn2, "Algoritmo");
+            for (int i = 0; i < numeroDatos; i++)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumn1) - 1].Value = (i + 1).ToString();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumn2) - 1].Value = (listaInicial[i].Cantidad).ToString(); 
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DescargaExcel = (dataGridView1);
+        }
     }
+
 }
